@@ -1,0 +1,5 @@
+[20-Apr-2020 09:56:35 Etc/GMT] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/globalhunt/public_html/Vpox/support5zg6w5e2/login.php on line 97
+[20-Apr-2020 09:56:35 Etc/GMT] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/globalhunt/public_html/Vpox/support5zg6w5e2/login.php on line 98
+[20-Apr-2020 09:57:51 Etc/GMT] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/globalhunt/public_html/Vpox/support5zg6w5e2/login.php on line 97
+[20-Apr-2020 09:57:51 Etc/GMT] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/globalhunt/public_html/Vpox/support5zg6w5e2/login.php on line 98
+[20-Apr-2020 10:33:52 UTC] PHP Notice:  Undefined index: stat in /home/globalhunt/public_html/Vpox/support5zg6w5e2/viewt.php on line 53

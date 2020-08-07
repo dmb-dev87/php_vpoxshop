@@ -1,0 +1,69 @@
+I need something like this:
+Small FUD Anonymous Socks Proxy Server - See 3proxy, Tiny Proxy.
+
+You may use existing code in total or in part for this application. (See 3proxy, tiny proxy, etc)
+We require an anonymous proxy server, small in size, which runs in the background on Windows machines.
+There are a few that already exist (see above)
+
+Requirements -
+
+- Anonymous SOCKS5 Server (PROXYPROGRAM)
+- PROXYPROGRAM will install & run silently / undetectable to user of machine it is installed on
+- PROXYPROGRAM will run on startup via Registry Entries on install
+- Proxies can only be accessed thru my server only (COMMANDSERVER), i.e. 123.123.123.123:10000 thru 25000, each port represents a different proxy IP and Port
+- PROXYPROGRAM will use TOR (in background mode) to communicate to a TOR server (TORSERVER) - with all communications encrypted - It will communicate back to TORSERVER - IP address, Port, Machine ID, Proxy Version
+- PROXYPROGRAM will be remotely upgradeable
+- PROXYPROGRAM be remotely killable/removable
+
+Management -
+
+- On another server (COMMAND) an SQL database to hold IP address, Port, Machine ID, Proxy Version, On/Off, Country, State, City, Last Seen
+- PHP script on server (COMMAND) to check if proxy is Alive or Dead (On/Off, Last Seen), and geolocate to Country, City, State (will run via CRON). Script will also kill/uninstall all installs that are NOT IN THE USA (I cannot use proxies outside of the USA)
+
+
+Review -
+
+I need an exe that will install a proxy server (PROXYPROGRAM), have the PROXYPROGRAM run whenever the machine is on, in the background and undetectable. I need this PROXYPROGRAM to communicate back, via TOR to a TOR server (TORSERVER), data that is outlined above. I then need a script that runs on the, via CRON, "checks up" on all the proxies to see if they are alive, when last seen, and geolocate them, and remove all not in the USA.
+
+I will then access these proxies thru my COMMAND server, same IP (123.123.123.123) but using ports 10000 to 25000
+
+Or this
+
+I will need a server Socks application that will connect to a Server 2 application.
+When I want to use that proxy I will have to connect on the server 2 applications which will redirect the traffic to the proxy. (Back connect)
+
+This will work if I am under a router since I won't need to port forward.
+
+The Socks server which will run on my PC will be located in jsocks dot sourceforge dot net which is an open source SOCKS 4/5 server.
+
+I need both applications to be in Java.
+For those who understand what "Back connect" means I won't have to explain this more.
+
+Let`s say 1000 socks will connect to the back connect server. That means there are 1000 socks online.
+
+Let?s say back connect server has ip: 127.0.0.1. When I will connect to a proxy I will use 127.0.0.1:1000/5000.
+Back connect server will have ports from 1000 to 5000 opened. Also an option to allow connection based on IP or domain name.
+
+If someone tries to connect to the Back connect server and he is not in the allowed ip's he cannot connect.
+
+But, I need here at the socks5 auth: set username, disable auth, set pw for special port (range) and an http panel or a tool to control everything.
+Linux is OK but NO SSH; I prefer Windows platform.
+Must be written in C++
+
+do you think this will solve the problem? Am using linux Centos Read above.
+
+No, this is not method.
+What is the method used by olux?
+
+What do you mean ?
+
+
+I said this is the ssl problem.
+But in cpanel this is not fixed. Cpanel is old tool.
+At now many people use aws.
+In cpanel, i cant fix the smtp problem.
+At my local it's working well. 
+Do you understand ?
+this is not coding problem, this is the environment problem.
+OK ?
+the proxy is not method to solve this problem.

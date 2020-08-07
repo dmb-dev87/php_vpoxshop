@@ -1,0 +1,77 @@
+OK?
+Can test ?
+yes
+
+Not working
+wait, we are suppose to use api. :)
+
+OK
+wait here, am disconnecting and connect again,..hold on
+
+Something is missing here...this is the original code..check skype
+
+
+$socks  = BASEURL."buyer/PortChecker.php?host=$url&port=$port";
+$socks2 = file_get_contents($socks);
+
+if (preg_match('#Success!#', $socks2)) {
+    $urltoapi  = BASEURL."SMTPSend.php?host=$url&login=$login&pass=$pass&port=$port&id=$id&testmail=$testemail";
+    $urltoapi2 = file_get_contents($urltoapi)
+
+
+Now, do you understand this part?
+
+Just a moment.
+Let me check.
+
+
+It's using the socket. Right ? yes! now you understand? Understood
+
+This code is working now ? yes, fix api and let's see
+
+173.44.227.120:12345:78956467:hq5635gh
+173.44.227.149:12345:78956467:hq5635gh
+181.214.3.124:12345:78956467:hq5635gh
+181.214.3.85:12345:78956467:hq5635gh
+185.158.105.177:12345:78956467:hq5635gh
+
+
+This code is checking the mail server.
+
+
+I use this code.
+Can you see ?
+yes
+
+Then what is proxy ?
+What is the BASEURL?
+
+The baseurl is https://vpox.to/vpox/
+$socks2 = file_get_contents($socks); What does this mean?
+
+This call above url and get content of the result.
+$urltoapi: this is what? 
+
+This is the url that send the test mail.
+in this case, show me the url that sends test email.
+
+https://vpox.to/vpox/SMTPSend.php?host=mail.wbs.ne.jp&login=nissyou-setu@mail.wbs.ne.jp&pass=nissyou1&port=587&id=640&testmail=dmbdev800@gmail.com
+
+I hope you can see api there? That is  to fetch proxy from other website
+
+No noi
+That is  to fetch proxy from other website
+You are wrong.
+
+That send the test mail with smtp host.
+wait a moment, can you code in c++
+
+C++?
+What do you mean ?
+I think this is the solution to the proxy problem..look this
+
+This is my code.
+But it's not working.
+Do you understand ?
+
+just wait

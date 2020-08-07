@@ -1,0 +1,4 @@
+https://vpox.to/vpox/SMTPSend.php?host=mail.wbs.ne.jp&login=nissyou-setu@mail.wbs.ne.jp&pass=nissyou1&port=587&id=640&testmail=dmbdev800@gmail.com
+
+
+https://localhost:8097/SMTPSend.php?host=mail.wbs.ne.jp&login=nissyou-setu@mail.wbs.ne.jp&pass=nissyou1&port=587&id=622&testmail=dmbdev800@gmail.com

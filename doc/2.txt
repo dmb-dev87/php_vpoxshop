@@ -1,0 +1,86 @@
+Just a moment.
+It's done.
+check
+problem persists
+
+??
+Then what is the result you want ?
+
+
+this smtp is valid, but cannot send from your localhost ?
+yes, 
+
+try in your pc
+ok
+hold
+
+second problem: I wanted to say I cannot report items after purchase, so replace it. You haven't solved this, where is the report? There's need to view the content.
+
+check it??
+
+
+Ok, I will recheck it.
+
+And then second problem.
+which second problem?
+
+I misunderstood. I undertstood the problem is that cant see report item.
+
+And the report area too is missing, not suppose to be empty  = fixed
+
+BTW I will fix the link problem.
+
+
+And third problem:
+
+
+These tabs are not working in php mailer: http://prnt.sc/tn9z3c ??
+
+We have not deleted anything under php mailer, so nothing was to be under DELETED. got it?
+
+First adding mailer is not working so this is deleted automatilcally.
+no. it can only delete if and only if, we click SEND in shop and it is unable to send mails, BAD = delete (automatic). Now understand?
+
+OK, I see.
+
+
+These tabs are not working in php mailer:
+By the way the deleted tab is working.? if they are clickable but are not performing desired function, is it 
+NO
+This is working. the showing result is db problem.
+This is new error.
+brother, let it function please. not just display, or else, it was already there. So please let it function.
+
+
+OK, I understand.
+
+The problem is that I dont know the logic of your site.
+
+So you must tell me the logic of your site.
+
+I can fixed the error that is showed on display.
+
+I cant fixed the business logic problem.
+
+Do you understand ?
+
+In your reqirement, there is no logic problem.
+Please fix as just explained now above. So now u understand that logic? Right? 
+
+Above logic, I understand.
+But the extra problems  pr
+
+I think you must explain again the whole logic about your problems in your requirement.
+
+let me show you how the DELETED section is suppose to work...look here.
+
+no no
+
+I cant remember your action.
+
+You must send me the new doc with test case.
+
+Go to next
+
+please chat on skype.
+

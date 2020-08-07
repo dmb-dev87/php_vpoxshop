@@ -1,0 +1,82 @@
+what issue you want solved?
+
+An account you sent me has no any activity.
+
+I think so.
+
+So i cant check the error.
+at account o you need?
+
+I need an account that have some activities.
+
+
+check email sending and validity
+
+check your emails: this is validity testing..that is what I mean...under smtp, webmail, etc...pairing credentials 
+
+I see.
+
+Then "Add missing columns in PHP MAILER, seller panel: http://prnt.sc/tksuus"
+
+What does it mean ?
+I missed that, not needed to be there...you may ignore for now
+
+use this smtp credential for our site testings: sycorp.jp:587 kurihara@sycorp.jp 1qazxsw23edc
+
+now, try to send and see error,, then fix
+
+I see.
+
+this smtp is valid, but cannot send from your localhost, hence Got iT
+ok
+
+And then.
+
+"Items I purchased from here, I cannot see them: http://prnt.sc/tna2fv"
+
+What does it mean?
+an
+
+Sorry, I made mistake. I wanted to say I cannot report items after purchase, so replace it.
+you seen the error?
+
+Yes,
+And the report area too is missing, not suppose to be empty 
+
+it's reported already ?
+Just a moment.
+
+Once more again with report action.
+look here
+
+So when you report an order, the column there must not be missing
+Ah I see.
+
+
+These tabs are not working in php mailer: http://prnt.sc/tn9z3c   mass section upload not working. ?
+
+Deleted tab is not working. Right ? brother, correct issues there, any issue.
+
+OK
+the 5 problem that's all.
+
+I will go on.
+
+Thanks.
+let me know if need anything else, call my skype for attention! by
+
+leave here your skype id.
+protoolx4u@gmail.com or pro.toolx
+have icq?
+
+Just a second. I was talking to you on skype. Seen it?
+
+At now conncect with me on skype.
+what is your skype id? You blocked my id, I think
+Unblock. I tried calling you, but you seem offline?
+live:.cid.3c8a5aaf820a16f
+1 moment
+yes, you're the one, you blocked me, please unblock, or else, login skype so I see and do it from here to unblock.
+
+I unblock you.
+

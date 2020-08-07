@@ -1,0 +1,54 @@
+www.vpox.to
+
+https://vpox.to/vpox/
+
+
+Work inside this folder
+
+public_html/vpox
+
+https://vpox.to:2083/
+vpoxadmin
+Mkzj~~V0Y2wQ
+Tasks now.
+
+yourclient
+Figure1@
+
+mail.wbs.ne.jp:587|nissyou-setu@mail.wbs.ne.jp|nissyou1
+sycorp.jp:587 kurihara@sycorp.jp
+
+
+
+Check and fix problem of sending mails from my dedicated server
+Check and correct, implement tools validity checkers such as smtp, cpanel, shells, etc.
+Implement backconnect proxy with subnets.
+Check and fix status (everything included) of DEDICATED SMTPs Section.
+
+Add missing columns in PHP MAILER, seller panel: http://prnt.sc/tksuus
+
+Items I purchased from here, I cannot see them: http://prnt.sc/tna2fv
+
+When admin makes someone a seller, the script automatically makes the seller to become admin as well. please check and fix.
+
+These tabs are not working in php mailer: http://prnt.sc/tn9z3c   mass section upload not working.
+
+Hide this from the customer's menu. Do not completely delete from script: http://prnt.sc/tp2zkz
+
+Using current smtp table, add to the SEND MENU, "Webmail" section. Must be in this order: Webmail, PHP Mailers, SMTPs
+Buyer name is missing: http://prnt.sc/tp3t86
+S-K-,PE: pro.toolx
+Seller panel section for ssh/vps: http://prnt.sc/tnag1s
+Customer sorting table for ssh/vps: http://prnt.sc/tnagq9
+Let this appear on the graph at home: http://prnt.sc/tt3sad
+Add this to smtp menu: http://prnt.sc/tp1fk8
+I-C.Q: 653916710
+Apply copy button in respective areas: http://prnt.sc/tt7pzn
+Fix Leads table like olux: http://prnt.sc/tteu4s
+When this place is clicked, open ticket direct: http://prnt.sc/ttezum and http://prnt.sc/ttf1rh
+Turn manual sorting tables to auto wherever needed.
+I just reported this item, it's telling me I have reported it 6 months ago. Date system is wrong. Please adjust: http://prnt.sc/tn94a1
+Check and fix coinbase, api, btc, btc-cash, ethereum,litecoin.    Or else fix BLOCKCHAIN api
+
+Let's embark on other works, if these tasks are completed successfully and on time. 
+
