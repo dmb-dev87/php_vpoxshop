@@ -27,19 +27,20 @@ function sendt(id){
      url:"CreateTicket.html?s="+btoa(sub)+"&m="+btoa(msg),
      dataType:"text",
      success:function(data){
-     $("#resulta").html(data).show();
+      pageDiv(11,"Tickets - VpoxShop", "tickets.html#mytickets",0);
+      $("#resulta").html(data).show();
      },
    });
 }
 
     </script>
                <ul class="nav nav-tabs">
-    <li class=""><a href="#mytickets" data-toggle="tab" aria-expanded="true">My Tickets</a></li>
-    <li class="active"><a href="#open" data-toggle="tab" aria-expanded="false"> <span class="glyphicon glyphicon-pencil"></span> New Ticket</a></li>
+    <li class="mytickets "><a href="#mytickets" data-toggle="tab" aria-expanded="true">My Tickets</a></li>
+    <li class="open active"><a href="#open" data-toggle="tab" aria-expanded="false"> <span class="glyphicon glyphicon-pencil"></span> New Ticket</a></li>
 </ul>    		
 
 <div id="myTabContent" class="tab-content">
-    <div class="tab-pane fade active in" id="open"> 
+    <div class="tab-pane fade in active" id="open"> 
     <div class="form-group col-lg-5 ">
           <h3>Support Tickets</h3>
 									 <b> What can we help you with?</b><br>

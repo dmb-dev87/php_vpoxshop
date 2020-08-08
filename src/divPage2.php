@@ -87,21 +87,20 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `cpanels` WHERE
 	  $code = array_search("$countryfullname", $countrycodes);
 	 $countrycode = strtolower($code);
 
-	 $url = $row['url'];
-	 	$d = explode("|", $url);
-		$urled = srl($d[0]);
+	$url = $row['url'];
+	$d = explode("|", $url);
+	$urled = srl($d[0]);
+
+	$exur = explode(':',$url);
+	if($exur[0] == 'https'){
+		$ic = '<i class="fas fa-lock fa-fw" style="color: #18BC9C;"></i>';
+		$cols = 'color: #18BC9C';
+	}else{
+		$ic = '<i class="fas fa-lock-open fa-fw"></i>';
+		$cols = '';
+	}
 		
-		
-		 $exur = explode(':',$url);
-	 if($exur[0] == 'https'){
-		 $ic = '<i class="fas fa-lock fa-fw" style="color: #18BC9C;"></i>';
-		 $cols = 'color: #18BC9C';
-	 }else{
-		 $ic = '<i class="fas fa-lock-open fa-fw"></i>';
-		 $cols = '';
-	 }
-		
-	 	  $tld = end(explode(".", parse_url($urled, PHP_URL_HOST))); 
+	$tld = end(explode(".", parse_url($urled, PHP_URL_HOST))); 
     $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
 		   while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";

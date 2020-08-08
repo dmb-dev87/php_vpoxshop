@@ -28,18 +28,19 @@ $r18=mysqli_num_rows($s18);
 $s19 = mysqli_query($dbcon, "SELECT * FROM dsmtps WHERE resseller='$usrid' and typesmtp='office365' and sold='0'");
 $r19=mysqli_num_rows($s19);
 
-  $countleads = mysqli_query($dbcon,"SELECT * FROM leads WHERE sold='0'");$countr1=mysqli_num_rows($countleads); 
+$countleads = mysqli_query($dbcon,"SELECT * FROM leads WHERE sold='0'");$countr1=mysqli_num_rows($countleads); 
 $countcpanels = mysqli_query($dbcon,"SELECT * FROM cpanels WHERE sold='0'");$countr2=mysqli_num_rows($countcpanels);
 $countshells = mysqli_query($dbcon,"SELECT * FROM stufs WHERE sold='0'");$countr3=mysqli_num_rows($countshells);
 $countrdps = mysqli_query($dbcon,"SELECT * FROM rdps WHERE sold='0'");$countr4=mysqli_num_rows($countrdps);
- $countmailers = mysqli_query($dbcon,"SELECT * FROM mailers WHERE sold='0'");$countr5=mysqli_num_rows($countmailers);
+$countmailers = mysqli_query($dbcon,"SELECT * FROM mailers WHERE sold='0'");$countr5=mysqli_num_rows($countmailers);
 $countsmtps = mysqli_query($dbcon,"SELECT * FROM smtps WHERE sold='0'");$countr66=mysqli_num_rows($countsmtps); 
 $countscams = mysqli_query($dbcon,"SELECT * FROM scampages");$countr6=mysqli_num_rows($countscams); 
 $counttutos = mysqli_query($dbcon,"SELECT * FROM tutorials");$countr7=mysqli_num_rows($counttutos); 
 $counttutosb = mysqli_query($dbcon,"SELECT * FROM banks");$countr8=mysqli_num_rows($counttutosb); 
-
+$countdsmpts = mysqli_query($dbcon, "SELECT * FROM dsmtps WHERE resseller='$usrid' and sold='0'");$countr10=mysqli_num_rows($countdsmpts);
 $counttutosp = mysqli_query($dbcon,"SELECT * FROM accounts");$countr9=mysqli_num_rows($counttutosp); 
 //$countr1=10;
+
 echo'
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">';
@@ -57,15 +58,10 @@ echo'
           ['Smtps',      $countr66],
           ['Scampages',      $countr6],
           ['Tutorials',      $countr7],
-	      ['Banks',      $countr8],
+	        ['Banks',      $countr8],
           ['Premium/Dating/Shop',      $countr9],
-          ['Strato',      $r15],
-          ['T-online',      $r16],
-          ['GoDaddy',      $r18],
-          ['Office365',      $r19],
-          ['Rackspace',      $r17],
-          ['IONOS',      $r14],
-                            ]);
+          ['Dedicated SMTPs', $countr10],
+        ]);
 
         var options = {
           title: 'Available Tools',  

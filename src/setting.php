@@ -151,7 +151,7 @@ $(window).on("popstate", function(e) {
 
 
 $(window).on('load', function() {
-$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
+// $('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
    pageDiv(14,'Setting - VpoxShop','setting.html',1);
    var clipboard = new Clipboard('.copyit');
     clipboard.on('success', function(e) {
@@ -185,40 +185,61 @@ function hideTooltip(btn) {
   <div class="container-fluid">
     <div class="navbar-header">
        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-    <div class="navbar-brand" onClick="location.href='index.html'" onMouseOver="this.style.cursor='pointer'"><b><span class="glyphicon glyphicon-fire"></span> Vpox SHOP <small><span class="glyphicon glyphicon-refresh"></span></small></b></div></div>
+    <div class="navbar-brand" onClick="location.href='index.html'" onMouseOver="this.style.cursor='pointer'"><b><span class="glyphicon glyphicon-fire"></span> Vpox SHOP </b></div></div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="topFixedNavbar1">
       <ul class="nav navbar-nav">
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-server"></i>&nbsp;Hosts <span class="doar" id="alhosts"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="rdp.html" onclick="pageDiv(1,'RDP - VpoxShop','rdp.html',0); return false;"><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp;RDPs <span class="label label-primary label-as-badge" id="rdp"></span></a></li>
+            <li><a href="ssh.html" onclick="pageDiv(16,'Ssh - VpoxShop','ssh.html',0); return false;"><i class="fas fa-file-code" aria-hidden="true"></i>&nbsp;_SSH(VPS) <span class="label label-primary label-as-badge" id="ssh"></span></a></li>
             <li><a href="cPanel.html" onclick="pageDiv(2,'cPanel - VpoxShop','cPanel.html',0); return false;"><i class="fa fa-tools" aria-hidden="true"></i>&nbsp;cPanels <span class="label label-primary label-as-badge" id="cpanel"></span></a></li>
             <li><a href="shell.html" onclick="pageDiv(3,'Shell - VpoxShop','shell.html',0); return false;"><i class="fas fa-file-code" aria-hidden="true"></i>&nbsp;Shells <span class="label label-primary label-as-badge" id="shell"></span></a></li>  
           </ul>
         </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fas fa-mail-bulk" aria-hidden="true"></i>&nbsp;Send <span class="doar" id="mail"></span></a>
           <ul class="dropdown-menu" role="menu"> 
+            <li><a href="webmail.html" onclick="pageDiv(18,'WebMail - VpoxShop','webmail.html',0); return false;"><i class="fa fa-envelope-open-text" aria-hidden="true"></i>&nbsp;WebMails <span class="label label-primary label-as-badge" id="webmail"></span></a></li>
             <li><a href="mailer.html" onclick="pageDiv(4,'PHP Mailer - VpoxShop','mailer.html',0); return false;"><i class="fa fa-leaf" aria-hidden="true"></i>&nbsp;PHP Mailers <span class="label label-primary label-as-badge" id="mailer"></span></a></li>
             <li><a href="smtp.html" onclick="pageDiv(5,'SMTP - VpoxShop','smtp.html',0); return false;"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;SMTPs <span class="label label-primary label-as-badge" id="smtp"></span></a></li>  
           </ul>
         </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Leads <span class="doar" id="all_leads"></span></a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Dedicated SMTPs <span class="doar" id="dsmtps"></span></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <?php
+			        // $typesmtp=$_GET['smtp'];
+              $arr=array('strato','tonline','godaddy','office365','rackspace','ionos');
+              $arr1=array('Strato','T-online','GoDaddy','Office365','Rackspace','1and1 IONOS');
+              foreach($arr as $key=>$val)
+              {
+			      ?>
+			      <li><a href="dsmtp<?php echo $val;?>.html">
+            <?php
+			        echo $arr1[$key];
+			      ?> 
+            <span class="label label-primary label-as-badge" id="dsmtp_<?php echo $val;?>"></span></a></li>  
+			      <?php
+              }
+			      ?>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-address-book" aria-hidden="true"></i>&nbsp;Leads <span class="doar" id="all_leads"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="leads.html" onclick="pageDiv(6,'Leads - VpoxShop','leads.html',0); return false;"><i class="fa fa-at" aria-hidden="true"></i>&nbsp;Leads <span class="label label-primary label-as-badge" id="leads"></span></a></li>
           </ul>
         </li>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;Accounts <span class="doar" id="accounts"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="premium.html" onclick="pageDiv(7,'Premium/Dating/Shop - VpoxShop','premium.html',0); return false;"><img src="img/premium.png" height="22px" width="22px">&nbsp;Premium/Dating/Shop <span class="label label-primary label-as-badge" id="premium"></span></a></li>
-            <li><a href="banks.html" onclick="pageDiv(8,'Banks - VpoxShop','banks.html',0); return false;"><i class="fa fa-bank" aria-hidden="true"></i>&nbsp;Banks <span class="label label-primary label-as-badge" id="banks"></span></a></li>  
-          </ul>
-        </li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-leaf" aria-hidden="true"></i>&nbsp;Others <span class="doar" id="accounts"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="scampage.html" onclick="pageDiv(9,'Scampages - VpoxShop','scampage.html',0); return false;"><i class="fa fa-file" aria-hidden="true"></i>&nbsp;Scampage <span class="label label-primary label-as-badge" id="scams"></span></a></li>
-            <li><a href="tutorial.html" onclick="pageDiv(10,'Tutorials - VpoxShop','tutorial.html',0); return false;"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;Tutorial <span class="label label-primary label-as-badge" id="tutorials"></span></a></li>  
-          </ul>
-        </li>
+		<!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;Accounts <span class="doar" id="accounts"></span></a>-->
+  <!--        <ul class="dropdown-menu" role="menu">-->
+  <!--          <li><a href="premium.html" onclick="pageDiv(7,'Premium/Dating/Shop - VpoxShop','premium.html',0); return false;"><img src="img/premium.png" height="22px" width="22px">&nbsp;Premium/Dating/Shop <span class="label label-primary label-as-badge" id="premium"></span></a></li>-->
+  <!--          <li><a href="banks.html" onclick="pageDiv(8,'Banks - VpoxShop','banks.html',0); return false;"><i class="fa fa-bank" aria-hidden="true"></i>&nbsp;Banks <span class="label label-primary label-as-badge" id="banks"></span></a></li>  -->
+  <!--        </ul>-->
+  <!--      </li>-->
+  <!--      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-leaf" aria-hidden="true"></i>&nbsp;Others <span class="doar" id="accounts"></span></a>-->
+  <!--        <ul class="dropdown-menu" role="menu">-->
+  <!--          <li><a href="scampage.html" onclick="pageDiv(9,'Scampages - VpoxShop','scampage.html',0); return false;"><i class="fa fa-file" aria-hidden="true"></i>&nbsp;Scampage <span class="label label-primary label-as-badge" id="scams"></span></a></li>-->
+  <!--          <li><a href="tutorial.html" onclick="pageDiv(10,'Tutorials - VpoxShop','tutorial.html',0); return false;"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;Tutorial <span class="label label-primary label-as-badge" id="tutorials"></span></a></li>  -->
+  <!--        </ul>-->
+  <!--      </li>-->
                       
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -252,7 +273,7 @@ if ($r844941 == "1") {
 ?>
 </span><span class="doar" id="alhosts"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="tickets.html" onclick="pageDiv(11,'Tickets - VpoxShop','tickets.html',0); return false;"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;Tickets <span class="label label-info"><span id="tickets"></span></span>	<?php
+            <li><a href="tickets.html" onclick="pageDiv(11,'Tickets - VpoxShop','tickets.html#mytickets',0); return false;"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;Tickets <span class="label label-info"><span id="tickets"></span></span>	<?php
 $s1 = mysqli_query($dbcon, "SELECT * FROM ticket WHERE uid='$uid' and seen='1'");
 $r1 = mysqli_num_rows($s1);
 if ($r1 == "1") {
@@ -286,6 +307,7 @@ if ($r1 == "1") {
   </div>
   <!-- /.container-fluid -->
 </nav>
+
 <div id="mainDiv">
 
 

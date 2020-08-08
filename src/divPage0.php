@@ -38,7 +38,7 @@ while($r = mysqli_fetch_assoc($qq)){				echo'<a class="list-group-item"><h5 clas
 </div>
 <div class="form-group col-lg-6">
 	<!-- <img src="files/img/eid.jpg" style="width: 70%; height: 70%" title="Happy Easter"> -->
-<iframe src="static.html" style="border:none;" width="400" height="270" scrolling="no">Browser not compatible.</iframe>
+<iframe src="static.html" style="border:none;" width="450" height="270" scrolling="no">Browser not compatible.</iframe>
 
     ';
 	?>

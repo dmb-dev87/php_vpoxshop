@@ -77,30 +77,29 @@ table.floatThead-table {
 
 </style>
 <script type="text/javascript">
-             function ajaxinfo() {
-                $.ajax({
-                    type: 'GET',
-                    url: 'ajaxinfo.html',
-                    timeout: 10000,
+  function ajaxinfo() {
+    $.ajax({
+      type: 'GET',
+      url: 'ajaxinfo.html',
+      timeout: 10000,
 
-                    success: function(data) {
-                        if (data != '01') {
-                            var data = JSON.parse(data);
-                            for (var prop in data) {
-                                $("#" + prop).html(data[prop]).show();
-                            }
-                        } else {
-                            window.location = "logout.html";
-                        }
-                    }
-                });
+      success: function(data) {
+          if (data != '01') {
+              var data = JSON.parse(data);
+              for (var prop in data) {
+                  $("#" + prop).html(data[prop]).show();
+              }
+          } else {
+              window.location = "logout.html";
+          }
+      }
+    });
+}
+setInterval(function() {
+    ajaxinfo()
+}, 3000);
 
-            }
-            setInterval(function() {
-                ajaxinfo()
-            }, 3000);
-
-            ajaxinfo();
+ajaxinfo();
 
 $(document).keydown(function(event){
     if(event.which=="17")
@@ -112,6 +111,11 @@ $(document).keyup(function(){
 });
 
 var cntrlIsPressed = false;
+var div_id = 0;
+
+function setActiveTab(id) {
+  div_id = id;
+}
 
 
 function pageDiv(n,t,u,x){
@@ -119,47 +123,64 @@ function pageDiv(n,t,u,x){
     window.open(u, '_blank');
     return false;
   }
-        var obj = { Title: t, Url: u };
-        if ( ("/"+obj.Url) != location.pathname) {
-        	if (x != 1) {history.pushState(obj, obj.Title, obj.Url);}
-        	else{history.replaceState(obj, obj.Title, obj.Url);}
+  var obj = { Title: t, Url: u };
+  if ( ("/"+obj.Url) != location.pathname) {
+    if (x != 1) {history.pushState(obj, obj.Title, obj.Url);}
+    else{history.replaceState(obj, obj.Title, obj.Url);}
+  }
 
-    	}
-      document.title = obj.Title;
-    $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
-    $.ajax({
+  var param = u.slice(13);
+  if (param === "mytickets") {
+    div_id = 0;
+  } else {
+    div_id = 1;
+  }
+  document.title = obj.Title;
+  $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+  $.ajax({
     type:       'GET',
     url:        'divPage'+n+'.html',
     success:    function(data)
     {
-        $("#mainDiv").html(data).show();
-        newTableObject = document.getElementById('table');
-        sorttable.makeSortable(newTableObject);
-        $(".sticky-header").floatThead({top:60});
-        if(x==0){ajaxinfo();}
-      }});
-    if (typeof stopCheckBTC === 'function') { 
+      $("#mainDiv").html(data).show();
+      newTableObject = document.getElementById('table');
+      sorttable.makeSortable(newTableObject);
+      $(".sticky-header").floatThead({top:60});
+      if(x==0){ajaxinfo();}
+      
+      if (div_id === 0) {        
+        $("li.mytickets").addClass("active");
+        $("div#mytickets").addClass("active");
+        $("li.open").removeClass("active");
+        $("div#open").removeClass("active");    
+      }
+      else {    
+        $("li.mytickets").removeClass("active");
+        $("div#mytickets").removeClass("active");
+        $("li.open").addClass("active");
+        $("div#open").addClass("active");    
+      }
+    }
+  });
+  if (typeof stopCheckBTC === 'function') { 
     var a = stopCheckBTC();
-     }
-
+  }
 }
 
 $(window).on("popstate", function(e) {
-        location.replace(document.location);
-
+  location.replace(document.location);
 });
 
 
 $(window).on('load', function() {
-$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-   pageDiv(11,'Tickets - VpoxShop','tickets.html',1);
-   var clipboard = new Clipboard('.copyit');
-    clipboard.on('success', function(e) {
-      setTooltip(e.trigger, 'Copied!');
-      hideTooltip(e.trigger);
-      e.clearSelection();
-   });
-
+  $('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
+  pageDiv(11,'Tickets - VpoxShop','tickets.html',1);
+  var clipboard = new Clipboard('.copyit');
+  clipboard.on('success', function(e) {
+    setTooltip(e.trigger, 'Copied!');
+    hideTooltip(e.trigger);
+    e.clearSelection();
+  });
 });
 
 

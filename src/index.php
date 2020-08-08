@@ -112,6 +112,7 @@ $(document).keyup(function(){
 });
 
 var cntrlIsPressed = false;
+var div_id = 0;
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -137,6 +138,12 @@ function pageDiv(n,t,u,x){
         	else{history.replaceState(obj, obj.Title, obj.Url);}
 
     	}
+      var param = u.slice(13);
+      if (param === "mytickets") {
+        div_id = 0;
+      } else {
+        div_id = 1;
+      }
       document.title = obj.Title;
     $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
 	if(smtp!='' && smtp!='null')
@@ -157,6 +164,18 @@ function pageDiv(n,t,u,x){
         sorttable.makeSortable(newTableObject);
         $(".sticky-header").floatThead({top:60});
         if(x==0){ajaxinfo();}
+        if (div_id === 0) {        
+          $("li.mytickets").addClass("active");
+          $("div#mytickets").addClass("active");
+          $("li.open").removeClass("active");
+          $("div#open").removeClass("active");    
+        }
+        else {    
+          $("li.mytickets").removeClass("active");
+          $("div#mytickets").removeClass("active");
+          $("li.open").addClass("active");
+          $("div#open").addClass("active");    
+        }
       }});
     if (typeof stopCheckBTC === 'function') { 
     var a = stopCheckBTC();
