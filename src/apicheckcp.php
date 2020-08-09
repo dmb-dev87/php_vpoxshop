@@ -1,8 +1,8 @@
 <?php
 session_start();
- $cp12 = $_GET["cp12"];
- $logine = $_GET["login"];
- $passee = rawurldecode($_GET["pass"]);
+$cp12 = $_GET["cp12"];
+$logine = $_GET["login"];
+$passee = rawurldecode($_GET["pass"]);
 
 $ch=curl_init($cp12);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -20,12 +20,10 @@ curl_close($ch);
 $code = $h['http_code'];
 
 if ($code == '200') {
-     echo 'CP Work';
+	echo 'CP Work';
 } else {	
 	echo 'Bad CP'; 
 }
- 
-
 
 /*$ch = curl_init("$cp12");
 curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
@@ -36,7 +34,6 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,
 array('user'=>"$logine",'pass'=>"$passee"));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $postResult = curl_exec($ch);
-
 curl_close($ch);
 print_r($postResult);
 if (preg_match('#CONTENT="2;URL=/cpsess#',$postResult)) {
@@ -59,7 +56,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $postResult = curl_exec($ch);
 curl_close($ch);
 if (preg_match('#CONTENT="2;URL=/cpsess#',$postResult)) {
-    echo '<br>CP Work';
+	echo '<br>CP Work';
 } else {	
 	echo 'Bad CP'; 
 }

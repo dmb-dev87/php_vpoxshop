@@ -8,6 +8,7 @@ if(!isset($_SESSION['sname']) and !isset($_SESSION['spass'])){
    header("location: ../");
    exit();
 }
+
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 $s1 = mysqli_query($dbcon, "SELECT * FROM ticket where status='1' and uid='$usrid'");
@@ -77,16 +78,18 @@ $myObj->dsmtp_rackspace = "$r17";
 $myObj->dsmtp_godaddy = "$r18";
 $myObj->dsmtp_office365 = "$r19";
 $myObj->ssh = "$r20";
-        $q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$usrid'");
-          $r = mysqli_fetch_assoc($q);
-		  $reselerif = $r['resseller'];
-       if ($reselerif == "1") { 
-          $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$usrid'");
-          $r = mysqli_fetch_assoc($q);
-$seller = $r['soldb'];
-$myObj->seller = "$$seller";		
-	   } else { }
-$myJSON = json_encode($myObj);
 
+$q = mysqli_query($dbcon, "SELECT resseller FROM users WHERE username='$usrid'");
+$r = mysqli_fetch_assoc($q);
+$reselerif = $r['resseller'];
+if ($reselerif == "1") { 
+   $q = mysqli_query($dbcon, "SELECT soldb FROM resseller WHERE username='$usrid'");
+   $r = mysqli_fetch_assoc($q);
+   $seller = $r['soldb'];
+   $myObj->seller = "$$seller";		
+} else { 
+
+}
+$myJSON = json_encode($myObj);
 echo $myJSON;
 ?>
