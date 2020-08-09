@@ -31,6 +31,7 @@ $r19=mysqli_num_rows($s19);
 $countleads = mysqli_query($dbcon,"SELECT * FROM leads WHERE sold='0'");$countr1=mysqli_num_rows($countleads); 
 $countcpanels = mysqli_query($dbcon,"SELECT * FROM cpanels WHERE sold='0'");$countr2=mysqli_num_rows($countcpanels);
 $countshells = mysqli_query($dbcon,"SELECT * FROM stufs WHERE sold='0'");$countr3=mysqli_num_rows($countshells);
+$countsshs = mysqli_query($dbcon,"SELECT * FROM ssh WHERE sold='0'");$countr12=mysqli_num_rows($countsshs); 
 $countrdps = mysqli_query($dbcon,"SELECT * FROM rdps WHERE sold='0'");$countr4=mysqli_num_rows($countrdps);
 $countmailers = mysqli_query($dbcon,"SELECT * FROM mailers WHERE sold='0'");$countr5=mysqli_num_rows($countmailers);
 $countsmtps = mysqli_query($dbcon,"SELECT * FROM smtps WHERE sold='0'");$countr66=mysqli_num_rows($countsmtps); 
@@ -39,7 +40,7 @@ $counttutos = mysqli_query($dbcon,"SELECT * FROM tutorials");$countr7=mysqli_num
 $counttutosb = mysqli_query($dbcon,"SELECT * FROM banks");$countr8=mysqli_num_rows($counttutosb); 
 $countdsmpts = mysqli_query($dbcon, "SELECT * FROM dsmtps WHERE resseller='$usrid' and sold='0'");$countr10=mysqli_num_rows($countdsmpts);
 $counttutosp = mysqli_query($dbcon,"SELECT * FROM accounts");$countr9=mysqli_num_rows($counttutosp); 
-//$countr1=10;
+$countwebmails = mysqli_query($dbcon,"SELECT * FROM smtps WHERE sold='0'");$countr11=mysqli_num_rows($countwebmails); 
 
 echo'
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -51,16 +52,18 @@ echo'
         var data = google.visualization.arrayToDataTable([
           ['Tools', 'Number'],
           ['Leads',  $countr1],
+          ['Rdps',      $countr4],
+          ['SSH(VPS)',     $countr12],
           ['cPanels',     $countr2],
           ['Shells',     $countr3],
-          ['Rdps',      $countr4],
-          ['Mailers',      $countr5],
+          ['WebMails', $countr11],
+          ['PHP Mailers',      $countr5],
           ['Smtps',      $countr66],
+          ['Dedicated SMTPs', $countr10],
           ['Scampages',      $countr6],
           ['Tutorials',      $countr7],
 	        ['Banks',      $countr8],
           ['Premium/Dating/Shop',      $countr9],
-          ['Dedicated SMTPs', $countr10],
         ]);
 
         var options = {
